@@ -1,0 +1,185 @@
+/* Reset & font */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* Wrapper - centers everything */
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #020024;
+  background: #020024;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  /* linear gradient background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
+  position: relative;
+  gap: 2rem; /* spacing between board and buttons */
+}
+
+/* Game Info */
+.game-info {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.7rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Tic Tac Toe Board */
+.tic-tac-toe {
+  width: 90%;
+  max-width: 20rem;
+  max-height: 20rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  aspect-ratio: 1/1;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 4px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  animation: rainbow-border 5s linear infinite;
+}
+
+/* Rainbow border animation */
+@keyframes rainbow-border {
+  0% {
+    border-color: red;
+  }
+  14% {
+    border-color: orange;
+  }
+  28% {
+    border-color: yellow;
+  }
+  42% {
+    border-color: green;
+  }
+  57% {
+    border-color: blue;
+  }
+  71% {
+    border-color: indigo;
+  }
+  85% {
+    border-color: violet;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+/* Boxes */
+.box {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.box:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.box.x {
+  color: #4fc3f7;
+}
+.box.o {
+  color: #ff8a80;
+}
+
+/* Win glow */
+.win {
+  background-color: rgba(0, 255, 0, 0.2) !important;
+  color: #00ffcc !important;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #00ffcc;
+  }
+  to {
+    box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffcc;
+  }
+}
+
+/* Click animation */
+.clicked {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #00c6ff, #ff5722);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 87, 34, 0.7);
+}
+
+/* Dancing GIF/emoji animation */
+@keyframes dance {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+}

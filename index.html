@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="icon" type="image/png" href="assets/tic.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <p class="game-info"></p>
+
+      <div class="tic-tac-toe"></div>
+
+      <div class="buttons">
+        <button class="btn new-game">New Game</button>
+        <button class="btn reset">Reset</button>
+        <button class="btn mute-btn">Mute/Unmute 🎵</button>
+      </div>
+
+      <audio id="click-sound" src="assets/ting.mp3"></audio>
+      <audio id="win-sound" src="assets/music.mp3"></audio>
+      <audio id="bg-music" src="assets/music.mp3" loop></audio>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </body>
+</html>
